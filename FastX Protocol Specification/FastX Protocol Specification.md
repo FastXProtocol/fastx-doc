@@ -78,7 +78,9 @@ The Address's all available UTXOs in child chain
 ##### params
 
 contractAddress: `address`, the smart contract address for the depositing token, 0 if ETH
+
 amount: `uint256`, the depositing amount, 0 if ERC721
+
 tokenid: `uint256`, token id for the asset, 0 if ERC20
 
 ##### return
@@ -92,26 +94,47 @@ transaction hash
 ##### params
 
 blknum1: `uint256`, block number of input 1
+
 txindex1: `uint256`, transaction number in that block for input 1
+
 oindex1: `uint256`, output number of that transaction for input 1
+
 blknum2: `uint256`, block number of input 2
+
 txindex2: `uint256`, transaction number in that block for input 2
+
 oindex2: `uint256`, output number of that transaction for input 2
+
 newowner1: `address`, owner of output 1
+
 contractaddress1: `address`, asset address for output 1, 0x0 if ETH
+
 amount1: `uint256`, the amount for the asset, 0 if ERC721
+
 tokenid1: `uint256`, token id for the asset, 0 if ERC20
+
 newowner2: `address`, owner of output 2
+
 contractaddress2: `address`, asset address for output 2, 0x0 if ETH
+
 amount2: `uint256`, the amount for the asset, 0 if ERC721
+
 tokenid2: `uint256`, token id for the asset, 0 if ERC20
+
 fee: `uint256`, transacton fee
+
 expiretimestamp: `uint256`, expiration time for the transaction
+
 salt: `uint256`, salt
+
 address1: `address`, owner of input1
+
 address2: `address`, owner of input2
+
 sign1: `bytes`, owner1's signature
+
 sign2: `bytes`, owner2's signature
+
 
 ##### return
 
@@ -124,11 +147,17 @@ transaction hash
 ##### params
 
 blknum: `uint256`, block number
+
 txindex: `uint256`, transaction number in that block
+
 oindex: `uint256`, output number of that transaction
+
 contractAddress: `address`, the smart contract address for the exiting token, 0 if ETH
+
 amount: `uint256`, the exiting amount, 0 if ERC721
+
 tokenid: `uint256`, token id for the asset, 0 if ERC20
+
 
 ##### return
 
@@ -138,7 +167,7 @@ transaction hash
 
 ### 3. Smart Contract
 
-####Event
+#### Event
 
 ##### Deposit
 
