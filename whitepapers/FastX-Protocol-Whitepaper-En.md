@@ -2,6 +2,10 @@
 
 
 
+> This is still an early draft, any comments and feedbacks are welcome! Email: max@fastx.pro 
+
+
+
 ## Abstract
 
 This protocol aims to bring fast and low fee token exchanges to any dApps running on Ethereum. It helps those applications to make full use of their existing technology frameworks, and to conveniently integrate the blockchain technology. FastX eliminates the need for each application to independently develop, operate, and maintain its own exchange system. Through direct wallet-to-wallet transactions, it aso increases the liquidity sharing between dApps. By extending Plasma, FastX brings both on-chain security and off-chain high speed and low fee features to various token assets trading. 
