@@ -1,6 +1,6 @@
 # Low Latency Transaction on Plasma
 
-Currently, Plasma MVP requires all child chain pending transactions to be committed and confirmed on Ethereum, the root chain, before they are considered finalized and can be used by other transactions. That means that Plasma users must wait for at least 16 seconds on average, which is a whole block confirmation time on Ethereum. And it also means that the transaction latency on Plasma will be even higher if not as equal than that on the root chain, which would be a big setback for Plasma adoptions.
+Currently, Plasma MVP requires all child chain pending transactions to be committed and confirmed on the root chain, i.e. Ethereum, before they are considered finalized and can be used by other transactions. That means that Plasma users must wait for at least 16 seconds on average, which is a whole block confirmation time on Ethereum. And it also means that the transaction latency on Plasma will be even higher if not as equal than that on the root chain, which would be a big setback for Plasma adoptions.
 
 Here we propose a solution that child chain pending transactions can be used as inputs of other transactions in the same block, even the block is not yet committed to the root chain. That means pending transactions are considered to be immediatley confirmed once it's included in the child chain block, which results in super low latencies in child chains, and drastically boost the transactions per speed(TPS). This proposal is inspired by David Knott and Kelvin Fichter's  [“Plasma w/o Confirmations”](https://github.com/omisego/research/blob/master/plasma/plasma-mvp/specifications/no-confirmations.md) and Ben Jones and Kelvin Fichter's  [“More Viable Plasma”](https://ethresear.ch/t/more-viable-plasma/2160) 
 
@@ -16,7 +16,7 @@ When a user receives the inclusion confirmation from the operator, and if he tru
 
 **Method I**:
 
-The user can submit the proof that his transaction is not included in the promised block to the root chain smart contract if he has the infomation of the block. If the challenge is accepted, the block is invalidated.
+The user can submit the proof of his transaction not being included in the promised block on root chain if he has the infomation of the block. If the challenge is accepted, the block is invalidated.
 
 **Method II**:
 
