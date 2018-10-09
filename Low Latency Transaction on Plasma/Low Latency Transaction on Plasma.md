@@ -16,12 +16,12 @@ When a user receives the inclusion confirmation from the operator, and if he tru
 
 **Method I**:
 
-The user can prove his transaction is not included in the promised block by submitting txMerkleRoot to the root chain smart contract. If the challenge is accepted, the block is invalidated.
+The user can submit the proof that his transaction is not included in the promised block to the root chain smart contract if he has the infomation of the block. If the challenge is accepted, the block is invalidated.
 
 **Method II**:
 
 1. The user can submit  `rlp(blockNumber，txIndex, txMerkleRoot)` and the inclusion confirmation signature from the operator, along with some ETH as a bond to challenge the block denoting as `blockNumber`
-2. Within a certain period, the operator needs to respond to the challenge by submitting her prove, as `rlp(blockNumber，txIndex, txMerkleRoot)` . If the response is invalid or the operator doesn't respond within that period, the block will be invalidated, and the bond goes back to the user. Or the block is safe, and the user loses his bond to the operator.
+2. Within a certain period, the operator needs to respond to the challenge by submitting her proof that the transaction is included. If the response is invalid or the operator doesn't respond within that period, the block will be invalidated, and the bond goes back to the user. Or the block is safe, and the user loses his bond to the operator.
 
 ## Block Invalidation Attacks
 
@@ -37,13 +37,13 @@ Rule 3 makes sure that even if the operator can challenge a block to make it inv
 
 ## Exit Transaction
 
-1. A transaction must be included in the current block before transaction index P;
+1. A transaction must be included in the current block before current transaction index plus P;
 2. the block number of the transaction input must be lower than the block number of that transaction, or the transaction index of its input must be less or equal to the transaction index of itself minus P;
 3. A new block must be committed to the root chain before M-Q, where M is the most recent number of root chain blocks, and Q is a positive integer smaller than M;
 4. The block containing the exit transaction must be committed to the root chain before M number of  root chain blocks.
 5. blockNum denotes the block number of the exit transaction; txIdx denotes the transaction index in that block; InputBlockNum denotes the block number of the input of the exit transaction; and InputTxIdx denotes the transaction index of the input of that transaction; So we get a exit waiting queue like the following:
-`Order by MAX(inputBlockNum1 * 100000 + inputTxIdx1, inputBlockNum2 * 100000 + inputTxIdx2) ASC, (blockNum * 100000 + txIdx) DESC`
-And the exit waiting period is 7 days.
+  `Order by MAX(inputBlockNum1 * 100000 + inputTxIdx1, inputBlockNum2 * 100000 + inputTxIdx2) ASC, (blockNum * 100000 + txIdx) DESC`
+  And the exit waiting period is 7 days.
 6. All inputs must be validated for the exit transaction.
 7. The challenge period is 3 days.
 
