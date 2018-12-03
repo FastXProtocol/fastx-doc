@@ -105,3 +105,12 @@ M2 = S2 / 100 / N1 * 4 * 60 * 24 * 365
 6. 从 2019 年开始并于 2021 年开始快速发展
 
 由以上设定及假设经计算可知，10 年后的价值以 40% 的折旧率可得 2019 年的代币价格为  $ 0.088
+
+#### 代币价格增长图
+
+![FEX Utility Value Each Year](https://raw.githubusercontent.com/FastXProtocol/fastx-doc/master/FastX%20%E4%BB%A3%E5%B8%81%E6%96%B9%E6%A1%88/fex_value_chart.png)
+
+
+#### 市场占有率增长图
+
+![FEX Penetration Percentage Each Year](https://raw.githubusercontent.com/FastXProtocol/fastx-doc/master/FastX%20%E4%BB%A3%E5%B8%81%E6%96%B9%E6%A1%88/fex_adoption_chart.png)
